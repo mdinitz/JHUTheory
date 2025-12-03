@@ -51,7 +51,7 @@ jobs:
           if [ ! -f "_site/index.html" ]; then echo "index not found"; exit 1; fi
 
       - name: Upload artifact for Pages
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./_site
 
@@ -61,7 +61,11 @@ jobs:
 
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        id: deployment
+        uses: actions/deploy-pages@v4
 
       - name: Post-deploy smoke check
         run: echo "Deployment complete. Pages will be available shortly." 
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
