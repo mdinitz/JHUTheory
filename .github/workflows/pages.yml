@@ -70,6 +70,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check if GitHub Pages is enabled for this repo
+        run: |
+          echo "Checking Pages status for $GITHUB_REPOSITORY..."
+          response=$(curl --silent --write-out "%{http_code}" -o /tmp/pages.json -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages")
+          if [ "$response" = "404" ]; then
+            echo "GitHub Pages is not enabled for this repository. Please enable it in Settings → Pages and select 'GitHub Actions' as build source: https://github.com/${GITHUB_REPOSITORY}/settings/pages"
+            cat /tmp/pages.json || true
+            exit 1
+          else
+            echo "Pages appears to be enabled (HTTP $response)."
+          fi
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
