@@ -99,7 +99,7 @@ The site uses JHU's official colors. Edit the CSS variables in `assets/css/style
   --color-accent: #CF4520;       /* JHU Spirit Orange */
   /* ... other variables ... */
 }
-```
+`` 
 
 ## License
 
