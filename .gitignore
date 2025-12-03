@@ -1,0 +1,18 @@
+# Ignore bundler lock file for cross-platform compatibility
+Gemfile.lock
+
+# Ignore Jekyll build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ignore macOS files
+.DS_Store
+
+# Ignore editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

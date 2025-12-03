@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/vnd.microsoft.icon">
+  <link rel="apple-touch-icon" href="{{ '/favicon.ico' | relative_url }}">
+  <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+  {% seo %}
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-content">
+        <a class="site-brand" href="{{ '/' | relative_url }}">
+          <img class="jhu-shield" src="{{ '/assets/images/jhu-shield.svg' | relative_url }}" alt="Johns Hopkins University">
+          <span class="site-title">
+            <span class="title-text">Johns Hopkins</span>
+            <span class="title-accent">Algorithms & Complexity</span>
+          </span>
+        </a>
+        <nav class="site-nav" role="navigation" aria-label="Main navigation">
+          <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul id="main-nav" class="nav-links">
+            <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active" aria-current="page"{% endif %}>Home</a></li>
+            <li><a href="{{ '/people' | relative_url }}" {% if page.url == '/people/' or page.url == '/people' %}class="active" aria-current="page"{% endif %}>People</a></li>
+            <li><a href="{{ '/seminar' | relative_url }}" {% if page.url == '/seminar/' or page.url == '/seminar' %}class="active" aria-current="page"{% endif %}>Seminar</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <div class="container">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p>Part of the <a href="https://www.cs.jhu.edu/">Department of Computer Science</a> and <a href="https://engineering.jhu.edu/ams/">Department of Applied Mathematics and Statistics</a></p>
+          <p><a href="https://engineering.jhu.edu/">Whiting School of Engineering</a> · <a href="https://www.jhu.edu/">Johns Hopkins University</a></p>
+        </div>
+        <div class="footer-logo">
+          <a href="https://www.jhu.edu/">
+            <img class="jhu-shield-small" src="{{ '/assets/images/shield-white.svg' | relative_url }}" alt="Johns Hopkins University">
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', function() {
+      const expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', (!expanded).toString());
+      navLinks.classList.toggle('active');
+      this.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

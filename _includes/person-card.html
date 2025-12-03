@@ -1,0 +1,21 @@
+<div class="person-card" role="listitem">
+  {% if person.image %}
+    <div class="person-avatar person-photo" aria-hidden="true">
+      <img src="{{ person.image | relative_url }}" alt="{{ person.name }}">
+    </div>
+  {% else %}
+    {% assign parts = person.name | split: ' ' %}
+    {% capture initials %}{% for part in parts limit:2 %}{{part | slice: 0, 1}}{% endfor %}{% endcapture %}
+    <div class="person-avatar" aria-hidden="true">{{ initials | upcase }}</div>
+  {% endif %}
+  <div class="person-info">
+    {% if person.url %}
+      <p class="person-name"><a href="{{ person.url }}">{{ person.name }}</a></p>
+    {% else %}
+      <p class="person-name">{{ person.name }}</p>
+    {% endif %}
+    {% if person.role %}
+      <p class="person-role">{{ person.role }}</p>
+    {% endif %}
+  </div>
+</div>

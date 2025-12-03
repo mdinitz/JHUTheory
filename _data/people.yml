@@ -1,0 +1,96 @@
+faculty:
+  - name: Vladimir Braverman
+    url: https://www.cs.jhu.edu/~vova/
+    image: /assets/images/people/Vladimir-Braverman.jpg
+  - name: Michael Dinitz
+    url: http://www.cs.jhu.edu/~mdinitz/
+    image: /assets/images/people/Michael-Dinitz.png
+  - name: Abhishek Jain
+    url: http://www.cs.jhu.edu/~abhishek/
+    image: /assets/images/people/Abhishek-Jain.jpg
+  - name: Rao Kosaraju
+    url: http://www.cs.jhu.edu/~kosaraju/
+    image: /assets/images/people/Rao-Kosaraju.jpg
+  - name: Tim Kunisky
+    url: http://www.kunisky.com/
+    image: /assets/images/people/Tim-Kunisky.jpg
+  - name: Holden Lee
+    url: https://holdenlee.github.io/
+    image: /assets/images/people/Holden-Lee.jpg
+  - name: Xin Li
+    url: http://www.cs.jhu.edu/~lixints/
+    image: /assets/images/people/Xin-Li.jpg
+  - name: Nicolas Loizou
+    url: https://nicolasloizou.github.io/
+    image: /assets/images/people/Nicolas-Loizou.jpg
+  - name: Jessica Sorrell
+    url: https://jlsorrell.github.io/
+    image: /assets/images/people/Jessica-Sorrell.jpg
+  - name: Lydia Zakynthinou
+    url: https://lydiazakynthinou.com/
+    image: /assets/images/people/Lydia-Zakynthinou.jpg
+
+affiliated:
+  - name: Raman Arora
+    url: http://www.cs.jhu.edu/~raman/Home.html
+    role: Computer Science
+    image: /assets/images/people/Raman-Arora.jpg
+  - name: Amitabh Basu
+    url: http://www.ams.jhu.edu/~abasu9/
+    role: Applied Mathematics and Statistics
+    image: /assets/images/people/Amitabh-Basu.jpg
+  - name: Edinah Gnang
+    url: http://www.ams.jhu.edu/~egnang/
+    role: Applied Mathematics and Statistics
+    image: /assets/images/people/Edinah-Gnang.jpg
+  - name: Edward Scheinerman
+    url: http://www.ams.jhu.edu/~ers/
+    role: Applied Mathematics and Statistics
+    image: /assets/images/people/Edward-Scheinerman.png
+
+students:
+  - name: Qiming Cui
+    url: https://qiming-cui.github.io/
+  - name: Anh Do
+  - name: Rupkatha Hira
+  - name: Kailee Lin
+  - name: Songtao Mao
+    url: https://songtaomao.github.io/
+  - name: Moshe Noivirt
+  - name: Omobolade Odedoyin
+    url: https://omoboladeodedoyin.com/
+  - name: Shruthi Prusty
+  - name: Yan Zhong
+    url: https://www.yan-zhong.com/
+
+alumni:
+  - name: Kuan Cheng
+    url: https://sites.google.com/site/ckkcdh/home
+  - name: Stephen Chestnut
+    url: http://www.stephenchestnut.com/
+  - name: Arka Rai Choudhuri
+    url: https://arka19.github.io/
+  - name: Aarushi Goel
+    url: https://aarushigoel.github.io/
+  - name: Nikita Ivkin
+  - name: Zhengzhong Jin
+    url: https://zhengzhongjin.github.io/
+  - name: Ama Koranteng
+  - name: Aditya Krishnan
+    url: https://arkrishn94.github.io/
+  - name: Harry Lang
+    url: http://mathematics.jhu.edu/directory/harry-lang/
+  - name: Zaoxing (Alan) Liu
+    url: https://zaoxing.github.io/
+  - name: Teodor Marinov
+  - name: Yasamin Nazari
+    url: https://www.cs.jhu.edu/~ynazari/
+  - name: Enayat Ullah
+    url: https://enayatullah.github.io/
+  - name: Lin (Forrest) Yang
+    url: http://drlinyang.net/
+  - name: Greg Vorsanger
+  - name: Zeyu Zhang
+    url: http://www.cs.jhu.edu/~zzy/
+  - name: Yu Zheng
+    url: https://www.cs.jhu.edu/~yuzheng/

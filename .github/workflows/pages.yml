@@ -1,0 +1,67 @@
+name: Deploy JHUTheory to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+concurrency:
+  group: "pages-${{ github.ref }}"
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+          bundler-cache: 'false'
+
+      - name: Cache Ruby gems
+        uses: actions/cache@v4
+        with:
+          path: vendor/bundle
+          key: "bundle-${{ runner.os }}-${{ hashFiles('**/Gemfile.lock') }}"
+          restore-keys: |
+            bundle-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: |
+          bundle config set path 'vendor/bundle' --local
+          bundle install --jobs 4 --retry 3
+
+      - name: Jekyll doctor (quick health check)
+        run: bundle exec jekyll doctor
+
+      - name: Build site
+        run: bundle exec jekyll build --destination ./_site --trace
+
+      - name: Run basic smoke checks
+        run: |
+          if [ ! -f "_site/index.html" ]; then echo "index not found"; exit 1; fi
+
+      - name: Upload artifact for Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
+
+      - name: Post-deploy smoke check
+        run: echo "Deployment complete. Pages will be available shortly." 
