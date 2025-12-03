@@ -1,5 +1,5 @@
 # Ignore bundler lock file for cross-platform compatibility
-Gemfile.lock
+# Gemfile.lock
 
 # Ignore Jekyll build output
 _site/
