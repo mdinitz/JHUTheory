@@ -16,3 +16,5 @@ _site/
 *~
 .vscode/
 .idea/
+vendor/
+vendor/bundle
