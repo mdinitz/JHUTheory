@@ -36,13 +36,21 @@ A modern Jekyll-based website for the JHU Algorithms and Complexity research gro
    git push -u origin main
    ```
 
-3. Enable GitHub Pages:
+3. Enable GitHub Pages (via GitHub Actions build):
    - Go to repository Settings → Pages
    - Under "Source", select "Deploy from a branch"
    - Select the `main` branch and `/ (root)` folder
    - Click Save
 
-4. Your site will be available at `https://YOUR_USERNAME.github.io/YOUR_REPO/`
+4. Your site will be available at `https://mdinitz.github.io/JHUTheory/` (or `https://YOUR_USERNAME.github.io/YOUR_REPO/` for other repos).
+
+### Deploying with GitHub Actions (recommended)
+
+This repository includes a GitHub Actions workflow that builds the Jekyll site and deploys to GitHub Pages automatically when you push to the `main` branch.
+
+1. Make sure your repository is named `JHUTheory` and the site `baseurl` in `_config.yml` is set to "/JHUTheory" and `url` is set to `https://mdinitz.github.io`.
+2. Push your changes to `main` and check the Actions tab for the Pages workflow run.
+3. Once the workflow completes, confirm the site is available at `https://mdinitz.github.io/JHUTheory/` and enable `Enforce HTTPS` in the Pages settings.
 
 ### Custom Domain (Optional)
 
