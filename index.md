@@ -17,8 +17,10 @@ title: Home
 <div class="research-areas">
   <div class="research-tag">Streaming Algorithms</div>
   <div class="research-tag">Learning Theory</div>
-  <div class="research-tag">Optimization</div>
+  <div class="research-tag">Complexity Theory</div>
+  <div class="research-tag">Coding Theory</div>
   <div class="research-tag">Pseudorandomness</div>
+  <div class="research-tag">Optimization</div>
   <div class="research-tag">Approximation Algorithms</div>
   <div class="research-tag">Graph Algorithms</div>
   <div class="research-tag">Differential Privacy</div>
