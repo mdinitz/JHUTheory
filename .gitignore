@@ -1,4 +1,5 @@
 # Ignore bundler lock file for cross-platform compatibility
+# (github-pages gem pins versions, so Gemfile.lock causes issues across environments)
 # Gemfile.lock
 
 # Ignore Jekyll build output
